@@ -1,0 +1,13 @@
+### Part A: Conceptual Questions
+Definition of a Class and an Object
+
+What is a class in object-oriented programming?
+What is an object, and how does it relate to a class?
+Constructors and Destructors
+
+Define a constructor. What is its role in a class?
+Define a destructor. Why is it important in managing an object’s lifecycle?
+Object Lifecycle
+
+Briefly describe the lifecycle of an object from instantiation to destruction.
+Why is it important for a class to manage its resources (e.g., memory) during its lifecycle?
