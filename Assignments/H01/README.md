@@ -2,10 +2,11 @@
 
 ### Part A: Conceptual Questions
 
+
 #### **Definition of a Class and an Object**
 
 **What is a class in object-oriented programming?**  
-A class is a blueprint that defines attributes (data) and behaviors (methods) for objects. It provides structure and reusability in programming.
+A class is a blueprint that defines attributes and methods for objects. It provides structure and reusability in programming.
 
 **What is an object, and how does it relate to a class?**  
 An object is an instance of a class with its own attribute values and can perform class-defined actions. It represents real-world entities in a program.
@@ -18,11 +19,12 @@ A constructor is a special function that initializes an object when it is create
 **Define a destructor. Why is it important in managing an object’s lifecycle?**  
 A destructor is a function that gets called when an object is destroyed. It releases resources like memory or file handles to prevent memory leaks.
 
+
 #### **Object Lifecycle**
 
 **Briefly describe the lifecycle of an object from instantiation to destruction.**
 
-- **Creation:** The constructor initializes the object, setting up its attributes.
+- **Initialization:** The constructor initializes the object, setting up its attributes.
 - **Usage:** The object performs its tasks by calling methods and modifying attributes.
 - **Destruction:** The destructor is called to clean up resources before the object is removed from memory.
 
@@ -43,7 +45,8 @@ class Creature {
 private:
     string name;
 public:
-    Creature(string creatureName) : name(creatureName) {
+    Creature( string Name){
+        name= Name;
         cout << "Creature " << name << " has been created!\n";
     }
     
@@ -65,10 +68,10 @@ int main() {
 
 #### **Explanation**
 
-- **The constructor initializes the creature’s name when an object is created.**
-- **The `display` method prints the creature’s name.**
-- **The destructor is called when the object goes out of scope, signaling its removal from memory.**
-- **When `goblin` is created, the constructor runs automatically. Once `main()` ends, `goblin` is destroyed, and the destructor is triggered.**
+- The constructor initializes the creature’s name when an object is created.
+- The `display` method prints the creature’s name.
+- The destructor is called when the object goes out of scope, signaling its removal from memory.
+- When `goblin` is created, the constructor runs automatically. Once `main()` ends, `goblin` is destroyed, and the destructor is triggered.
 
 ---
 
