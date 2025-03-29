@@ -1,5 +1,6 @@
 ## Homework - Classes & Objects
 
+
 ### Part A: Conceptual Questions
 
 
@@ -34,6 +35,7 @@ Poor memory management can cause memory leaks, slow performance, crashes, and in
 ---
 
 ### Part B: Minimal Coding Example
+
 
 #### **C++ Code Implementation**
 
@@ -76,6 +78,7 @@ int main() {
 ---
 
 ### Part C: Reflection & Short-Answer
+
 
 **Importance of Constructors:**  
 They ensure objects start with valid data, preventing uninitialized variables and ensuring proper setup.
