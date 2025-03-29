@@ -3,7 +3,6 @@
 
 ### Part A: Conceptual Questions
 
-
 #### **Definition of a Class and an Object**
 
 **What is a class in object-oriented programming?**  
