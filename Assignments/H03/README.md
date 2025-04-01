@@ -55,3 +55,8 @@ int main() {
 }
 
 ```
+### Part C: Short Reflection & Discussion
+#### When to use Inheritance
+Inheritance allows the user to reuse the same code. So, if we have a class which has common attributes to a different class, we can use inheritance in that situation. It is easier as the we don't have to create the same methods for derived class from scratch and can just reuse the ones from the base class. Using inheritance where classes don’t share meaningful common behavior can lead to messy code. . For example, forcing a `User` class to inherit from `Vehicle` doesn’t make sense. Instead, composition would be a better fit in such cases.
+
+### Method Overriding Vs Method Overloading
