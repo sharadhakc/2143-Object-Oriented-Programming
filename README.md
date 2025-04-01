@@ -1,7 +1,7 @@
-# 2143-OOP
+# 2143-Object Oriented Programming
 ## Sharadha KC
 
-#### Repo: 2143-Object-Oriented-Programming
+#### Repo: 2143-Object-Oriented-Programming 
 #### Email: skc0327@my.msutexas.edu
 
 #### Image:
