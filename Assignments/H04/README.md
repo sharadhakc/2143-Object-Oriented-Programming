@@ -121,63 +121,14 @@ int main() {
 ```
 Here, although shape is a pointer of type 8Shape*, the correct draw() method for Circle is called, because the actual object type is Circle. This is determined at runtime and is a key part of runtime polymorphism.
 
-#### Part D: Reflection & Real-World Applications
-**Practical Example**
-Imagine you’re developing a simulation game where different types of vehicles (e.g., Car, Truck, Motorcycle) need to have a move() function. You can define a Vehicle base class with a virtual move() function, and then have each derived class (Car, Truck, Motorcycle) implement its own version of move(). In the game, you might have a Vehicle* pointer, and you can call move() on it without worrying about whether it’s pointing to a Car, Truck, or Motorcycle.
-
-cpp
-Copy
-Edit
-class Vehicle {
-public:
-    virtual void move() = 0;
-};
-
-class Car : public Vehicle {
-public:
-    void move() override {
-        std::cout << "Car is moving" << std::endl;
-    }
-};
-
-class Truck : public Vehicle {
-public:
-    void move() override {
-        std::cout << "Truck is moving" << std::endl;
-    }
-};
-In the game loop, you can do something like:
-
-cpp
-Copy
-Edit
-Vehicle* vehicle = new Car();
-vehicle->move();  // Calls Car's move()
-Polymorphism allows you to treat all vehicles the same, while still letting each one behave according to its specific type. This greatly reduces code duplication and allows for easy extension of the game with new vehicle types.
+### Part D: Reflection & Real-World Applications
+#### Practical Example
+Imagine you’re developing a simulation game where different types of vehicles (e.g., Car, Truck, Motorcycle) need to have a `move()` function. You can define a Vehicle base class with a virtual `move()` function, and then have each derived class (Car, Truck, Motorcycle) implement its own version of `move()`. This reduces code duplication, makes it easier to add new vehicle types, and keeps the code scalable and maintainable. The correct move() method is called at runtime based on the actual object type, simplifying the game logic.
 
 #### Potential Pitfalls
 **Method Overloading:** One potential pitfall is that if method overloads aren't carefully designed, it can lead to ambiguity or confusion about which method gets called. For example, if you have two overloaded methods where the parameter types are too similar (e.g., int and float), it could cause issues where it's unclear which method should be invoked.
 
 **Runtime Polymorphism:** A potential pitfall of runtime polymorphism is performance issues. The method that is called is decided at runtime, which can add overhead. Additionally, debugging can become more difficult because it might not be obvious which method is being called, especially in complex hierarchies or with pointers.
 
-Checking Understanding
-If you add a new Triangle class to your existing Shape hierarchy, polymorphism allows your existing code to continue working without modification. You can continue using the same Shape* references, and when draw() is called, the correct method (from Triangle) will be selected at runtime.
-
-For example:
-
-```cpp
-Copy
-Edit
-class Triangle : public Shape {
-public:
-    void draw() override {
-        std::cout << "Drawing Triangle" << std::endl;
-    }
-};
-
-Shape* shape = new Triangle();
-shape->draw();  // Calls Triangle's draw() at runtime
-```
-This is a key advantage of polymorphism—it allows you to extend your program without breaking the existing code.
-
-
+#### Checking Understanding
+Polymorphism allows you to add a new Triangle class without touching the existing code that uses Shape* references. Since draw() is a virtual method, C++ will automatically call the correct draw() method based on the actual object type, whether it's a Circle, Rectangle, or Triangle. So, the code remains flexible and doesn’t need to change whenever you add a new shape—polymorphism handles the method call at runtime.
