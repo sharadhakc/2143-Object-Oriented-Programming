@@ -60,3 +60,13 @@ int main() {
 Inheritance allows the user to reuse the same code. So, if we have a class which has common attributes to a different class, we can use inheritance in that situation. It is easier as the we don't have to create the same methods for derived class from scratch and can just reuse the ones from the base class. Using inheritance where classes don’t share meaningful common behavior can lead to messy code. . For example, forcing a `User` class to inherit from `Vehicle` doesn’t make sense. Instead, composition would be a better fit in such cases.
 
 ### Method Overriding Vs Method Overloading
+Overriding means redefining a parent class method in the child class with the same name and parameters. It happens at runtime and lets the child class change how things work.
+Overloading means having multiple methods with the same name but different parameters in the same class. It happens at compile time.
+Inheritance relies heavily on overriding for flexibility because overriding lets the child change or upgrade the behavior without starting over. That’s what gives control and makes inheritance useful—not just copying, but customizing.
+### Inheritance vs. Interfaces/Abstract Classes
+Inheritance gives a class the ability to inherit behavior and properties from a parent class. It defines an "is-a" relationship and enables code reuse.. You can reuse and override behavior directly.
+Interfaces or abstract classes, on the other hand, don’t give full behavior. They just set rules or structure. You implement those rules in your own way.
+So, inheritance gives you something ready to use and modify, while interfaces force you to build your own version following a blueprint.
+### Pitfalls of Multiple Inheritance
+One common problem with multiple inheritance is the diamond problem. If two parent classes have the same method, and a child class inherits from both, the compiler doesn’t know which version to use.
+We fix the diamond problem with virtual inheritance. This means when a class inherits from two others, it only gets one copy of the shared features from the parent class. This removes the confusion because there’s no duplication.
