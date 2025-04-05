@@ -76,7 +76,7 @@ int main() {
 }
 ```
 **Explanation:**
-Here, we have an abstract class Shape with a pure virtual method draw(). The derived classes Circle and Rectangle each override the draw() method. We create an array of Shape* references and point them to a Circle and a Rectangle. When we call draw(), the correct method is chosen based on the actual object type, not the reference type. This decision happens at runtime.
+Here, we have an abstract class `Shape` with a pure virtual method `draw()`. The derived classes `Circle` and `Rectangle` each override the `draw()` method. We create an array of `Shape*` references and point them to a `Circle` and a `Rectangle`. When we call `draw()`, the correct method is chosen based on the actual object type, not the reference type. This decision happens at runtime.
 ### Part C: Overloading vs. Overriding Distinctions
 
 #### Overloaded Methods
@@ -95,7 +95,7 @@ public:
     }
 };
 ```
-In the above example, the calculate() method is overloaded. If you pass integers, the first method is called; if you pass doubles, the second method is called. The C++ compiler resolves this at compile time based on the argument types you provide.
+In the above example, the `calculate()` method is overloaded. If you pass integers, the first method is called; if you pass doubles, the second method is called. The C++ compiler resolves this at compile time based on the argument types you provide.
 #### Overridden Methods
 In method overriding, C++ resolves which method to call at runtime based on the type of the object. For example:
 
@@ -119,7 +119,7 @@ int main() {
     shape->draw();  // Calls Circle's draw() at runtime
 }
 ```
-Here, although shape is a pointer of type 8Shape*, the correct draw() method for Circle is called, because the actual object type is Circle. This is determined at runtime and is a key part of runtime polymorphism.
+Here, although shape is a pointer of type `Shape*`, the correct `draw()` method for `Circle` is called, because the actual object type is `Circle`. This is determined at runtime and is a key part of runtime polymorphism.
 
 ### Part D: Reflection & Real-World Applications
 #### Practical Example
