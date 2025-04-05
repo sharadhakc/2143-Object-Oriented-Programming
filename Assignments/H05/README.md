@@ -2,78 +2,22 @@
 
 ### Definition
 
-**What is abstraction in OOP?**
 Abstraction in OOP is the concept of hiding complex details and only exposing the necessary parts of an object to the user. It's like providing a simple interface to interact with an object while keeping the internal workings hidden.
 
 **Real-world analogy:**
-Think of a car's dashboard. You interact with the steering wheel, pedals, and buttons to drive. You don't need to know about the engine or how the transmission works. The dashboard abstracts those complex details and gives you only what you need to operate the car.
+Abstraction is like using a smartphone: you know pressing the screen to open an app or making a call, but you don’t need to understand how the phone’s operating system, hardware, or network works behind the scenes. You only interact with the essential features, and the complex details are hidden from you.
 
 ### Abstraction vs. Encapsulation
 
-**Comparison:**
-Abstraction hides the complexity of an object by exposing only the essential features, while encapsulation is about bundling the data (attributes) and methods (functions) that operate on the data into a single unit, and restricting access to some of the object’s components.
+Abstraction is about hiding the complexity of the system by exposing only the necessary features. It allows you to focus on what an object can do, rather than how it does it. For example, when using a phone, you interact with the screen to open apps, but you don’t need to understand the software, hardware, or network process behind it.
 
-**Why might someone confuse the two?**
-Both deal with hiding details, but abstraction focuses on *what* an object can do and encapsulation deals with *how* the object does it. So, both can seem like they're about hiding information, but they tackle different aspects.
+Encapsulation, on the other hand, is about bundling the data and methods that operate on that data within a class and restricting access to some of the object’s internal state. You can’t directly access or modify the data inside a class unless through specific methods. It's like having a phone’s internal workings (battery, processor, etc.) hidden away so you can’t directly mess with them, but you can use buttons and touch gestures to control the phone.
 
-### Designing with Abstraction
+While abstraction hides complexity, encapsulation protects data and limits how it's accessed. That's why people sometimes confuse them—they both simplify how we interact with things, but they do it in different ways.
 
-**Smart Thermostat Attributes:**
-1. **Current Temperature**
-2. **Target Temperature**
-3. **Mode (Heating or Cooling)**
+#### Designing with Abstraction
+For a smart thermostat, three essential attributes would be the `current temperature`, `target temperature`, and `mode`. For methods, I'd include `SetTemperature()`, allowing users to set their desired temperature, and `AdjustMode()`, which switches between heating, cooling, and off. These methods are what users would actually use to control the thermostat.
+The user doesn’t need to know how the sensor measures the temperature, how the data is processed, or how the system switches between modes. They just care about the user-friendly methods, like adjusting the temperature or changing the mode, which keeps the interface simple and focused on the tasks at hand.. The user only needs to control the temperature settings, not the underlying hardware or software that is why you would **omit certain internal detail**.
 
-**Smart Thermostat Methods:**
-1. **Set Temperature**
-2. **Turn On/Off**
 
-**Why omit certain details?**
-You would omit internal details like circuit design and firmware because they aren’t relevant to the user’s interaction with the thermostat. The user only needs to control the temperature settings, not the underlying hardware or software.
-
-### Benefits of Abstraction
-
-**Two benefits:**
-1. **Simplifies the system interface** by providing a clear way to interact with objects.
-2. **Improves maintainability** because changes in internal implementation don’t affect how the user interacts with the object.
-
-**How does abstraction reduce code complexity?**
-Abstraction reduces complexity by allowing you to focus on essential features and hiding unnecessary details, making code easier to understand and maintain.
-
----
-
-# Part B: Minimal Class Example (Pseudo-code)
-
-**Scenario:** Model a Banking System where you only want certain core operations exposed (like deposit and withdraw), hiding internal complexities (like encryption, logging, or ledger balancing).
-
-```cpp
-// Abstract class defining the interface
-class BankAccount {
-public:
-    virtual void deposit(double amount) = 0;
-    virtual void withdraw(double amount) = 0;
-    virtual double getBalance() const = 0;
-    virtual ~BankAccount() = default;
-};
-
-// Derived class implementing the abstract methods
-class SavingsAccount : public BankAccount {
-private:
-    double balance;
-public:
-    SavingsAccount(double initial_balance) : balance(initial_balance) {}
-    
-    void deposit(double amount) override {
-        balance += amount;
-    }
-
-    void withdraw(double amount) override {
-        if (amount <= balance) {
-            balance -= amount;
-        }
-    }
-
-    double getBalance() const override {
-        return balance;
-    }
-};
 
