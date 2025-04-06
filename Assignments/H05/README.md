@@ -26,7 +26,7 @@ The user doesn’t need to know how the sensor measures the temperature, how the
 - Abstraction makes it easier to add new features or make changes to the system.  When you modify the internals of a system, you don’t have to touch the code that interacts with the system at a higher level. This reduces the chances of breaking existing functionality.
 - It also helps avoid code duplication because the abstracted parts of the system are reused instead of being rewritten in multiple places. This increases reusability because once you define a general behavior or interface, it can be applied across different parts of the system or in other projects, saving time and effort.
 
-### Part 2: Minimal Class Example (Pseudo-code)
+### Part B: Minimal Class Example (Pseudo-code)
 ```cpp
 class BankAccount {
 public:
