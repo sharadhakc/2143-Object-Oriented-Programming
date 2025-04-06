@@ -1,6 +1,5 @@
 ## Homework - Understanding Composition and Aggregation in OOP
 ### Part A: Conceptual Questions
-#### Composition vs. Aggregation in OOP
 
  **Composition vs. Aggregation**
 
