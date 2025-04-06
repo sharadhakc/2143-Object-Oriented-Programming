@@ -47,8 +47,22 @@ public:
     }
 
 ```
-### Part C: Reflection & Comparison
-### Additional Exploration:
+#### Part C: Reflection & Comparison
+
+#### Distilling the Essentials
+
+In the `SavingsAccount` class, I would keep things like `encryptData()`, `logTransaction()`, and internal variables such as `accountPin` or `ledgerBalance` private. These aren't meant for the end user and are more about the internal operations of the banking system. The user just needs access to the basic functions like `deposit()`, `withdraw()`, or `getBalance()`. By hiding these implementation details, the class becomes easier to use and less error-prone. This is basically what encapsulation aims to do—protect internal data while exposing a clean interface.
+
+#### Contrast with Polymorphism
+
+When `BankAccount` is abstract and contains virtual methods like `withdraw()` or `deposit()`, and `SavingsAccount` overrides those, we see polymorphism in action. Say you have a pointer of type `BankAccount*` pointing to a `SavingsAccount` object. If you call `withdraw()` on that pointer, the overridden method in `SavingsAccount` runs. This shows runtime polymorphism, where the method call resolves based on the actual object type, not the pointer type. At the same time, abstraction is at play because the user doesn’t need to know what kind of account it is or how the withdrawal is implemented—they just use the interface.
+
+#### Real-World Example
+
+A good example outside of banking is in healthcare systems. Doctors interact with interfaces that let them pull patient data or input diagnoses, but they don’t see the backend code that handles encryption, access control, or data storage. Abstraction hides all of that complexity so the user experience stays simple and focused on what matters. This keeps the API design clean and secure while still powerful.
+
+
+#### Additional Exploration:
 **Interfaces vs. Abstract Classes**
 
 An interface defines a contract of methods that a class must implement but doesn’t provide any implementation itself, while an abstract class can provide both abstract methods (without implementation) and concrete methods (with implementation). In short, an interface is for defining "what" a class should do, while an abstract class can define "how" part of it should be done, along with leaving room for further implementation.
