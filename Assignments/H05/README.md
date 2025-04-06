@@ -54,6 +54,8 @@ public:
 An interface defines a contract of methods that a class must implement but doesn’t provide any implementation itself, while an abstract class can provide both abstract methods (without implementation) and concrete methods (with implementation). In short, an interface is for defining "what" a class should do, while an abstract class can define "how" part of it should be done, along with leaving room for further implementation.
 
 An interface would be more suitable than an abstract class when you need to define a common set of behaviors that multiple, unrelated classes must implement. For example, in a system where different types of objects (like a Bird, Car, and Robot) need to implement a Move() function, using an interface ensures that all these objects can be treated similarly while maintaining flexibility in their individual implementations.
+
 **Testing Abstraction** 
+
 To unit test abstract methods or classes, you can create a concrete subclass that provides basic implementations of the abstract methods. This allows you to instantiate the abstract class for testing purposes, making it easier to verify that the abstract methods behave as expected in a controlled, testable way. 
 
