@@ -26,4 +26,39 @@ The SOLID principles are important because they promote a clean, modular design 
 ### Part B: Minimal Examples or Scenarios
 
 #### DRY Violation & Fix
+## Part B: Minimal Examples or Scenarios
+
+### DRY Violation & Fix
+
+
+**Original Code (Violation of DRY)**:
+
+```cpp
+void printEmployeeDetails(Employee emp) {
+    cout << "Employee Name: " << emp.name << endl;
+    cout << "Employee Department: " << emp.department << endl;
+}
+
+void printCustomerDetails(Customer cust) {
+    cout << "Customer Name: " << cust.name << endl;
+    cout << "Customer Account Type: " << cust.accountType << endl;
+}
+```
+**Rewritten**
+```cpp
+void printDetails(string name, string info) {
+    cout << "Name: " << name << endl;
+    cout << "Info: " << info << endl;
+}
+
+void printEmployeeDetails(Employee emp) {
+    printDetails(emp.name, emp.department);
+}
+
+void printCustomerDetails(Customer cust) {
+    printDetails(cust.name, cust.accountType);
+}
+```
+
+
 
