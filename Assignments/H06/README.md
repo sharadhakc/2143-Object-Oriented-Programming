@@ -16,3 +16,32 @@ Composition and aggregation are different from inheritance because they express 
 **Real-World Analogy**
 
 We could use the example of a room and a house. The rooms are part of the house, and without the house, the rooms wouldn't exist. That’s composition. A Driver and a Car is more like aggregation. The driver isn’t bound to a single car, and a car can have different drivers. These distinctions are important because they affect how objects are created, linked, and destroyed in code. Composition leads to tighter relationships and dependencies, while aggregation gives more flexibility for objects to exist independently.
+#### Part 2: Minimal Coding Example
+
+```cpp
+// Composition: Address belongs to Person, doesn't exist alone.
+class Address {
+private:
+    string street;
+    string city;
+
+public:
+     Address(string str, string c) {
+        street = str;
+        city = c;
+    }
+};
+
+class Person {
+private:
+    string name;
+    Address address;  // Strong "has-a" relationship
+
+public:
+   public:
+    Person(string n, string str, string c) : address("", "") {
+        name = n;
+        address = Address(str, c); 
+    // When Person is destroyed, Address is too
+};
+```
