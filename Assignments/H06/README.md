@@ -45,3 +45,22 @@ public:
     // When Person is destroyed, Address is too
 };
 ```
+## Part C: Reflection & Short Discussion
+
+### Ownership & Lifecycle
+
+In a composition relationship, the child object’s existence fully depends on the parent. If the parent is destroyed, the child gets deleted with it. For example, if a house is demolished, all the rooms inside it disappear too. The child can't exist on its own because it was never meant to live outside that context.
+
+In contrast, with aggregation, the child object is more independent. Even if the parent is gone, the child can still exist. Like, a student might be part of a class, but even if the class ends, the student still exists somewhere else. The child object just happened to be referenced.
+
+### Advantages & Pitfalls
+
+One big advantage of using composition is that you have more control over how objects are created and destroyed. You know that when the parent object goes away, its components will too, which makes memory and lifecycle management easier.
+
+If you use composition in a place where aggregation would be better, you might overcomplicate things. You could end up tightly coupling two objects that don’t need to be that connected, which makes your code harder to reuse and maintain later on.
+
+### Contrast with Inheritance
+
+“Has-a” relationships like composition or aggregation describe what something *contains*, while “is-a” relationships through inheritance describe what something *is*. For example, a car *has an* engine, but a car *is a* vehicle.
+
+The problem with relying too much on inheritance is that it forces a rigid structure. You’re stuck following the parent class, even when you don’t need everything it gives you. That’s why people often prefer composition or aggregation. They’re more flexible and let you build around behavior instead of being locked into a family tree.
