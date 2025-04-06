@@ -2,14 +2,15 @@
 
 ### Part A: Conceptual Questions
 
-**Definition**
+#### Definition
 
 Abstraction in OOP is the concept of hiding complex details and only exposing the necessary parts of an object to the user. It's like providing a simple interface to interact with an object while keeping the internal workings hidden.
 
 **Real-world analogy:**
+
 Abstraction is like using a smartphone: you know pressing the screen to open an app or making a call, but you don’t need to understand how the phone’s operating system, hardware, or network works behind the scenes. You only interact with the essential features, and the complex details are hidden from you.
 
-**Abstraction vs. Encapsulation**
+#### Abstraction vs. Encapsulation 
 
 Abstraction is about hiding the complexity of the system by exposing only the necessary features. It allows you to focus on what an object can do, rather than how it does it. For example, when using a phone, you interact with the screen to open apps, but you don’t need to understand the software, hardware, or network process behind it.
 
@@ -17,15 +18,15 @@ Encapsulation, on the other hand, is about bundling the data and methods that op
 
 While abstraction hides complexity, encapsulation protects data and limits how it's accessed. That's why people sometimes confuse them—they both simplify how we interact with things, but they do it in different ways.
 
-**Designing with Abstraction**
+#### Designing with Abstraction
 For a smart thermostat, three essential attributes would be the `current temperature`, `target temperature`, and `mode`. For methods, I'd include `SetTemperature()`, allowing users to set their desired temperature, and `AdjustMode()`, which switches between heating, cooling, and off. These methods are what users would actually use to control the thermostat.
 The user doesn’t need to know how the sensor measures the temperature, how the data is processed, or how the system switches between modes. They just care about the user-friendly methods, like adjusting the temperature or changing the mode, which keeps the interface simple and focused on the tasks at hand.. The user only needs to control the temperature settings, not the underlying hardware or software that is why you would **omit certain internal detail**.
 
-**Benefits of Abstraction**
+#### Benefits of Abstraction
 - Abstraction makes it easier to add new features or make changes to the system.  When you modify the internals of a system, you don’t have to touch the code that interacts with the system at a higher level. This reduces the chances of breaking existing functionality.
 - It also helps avoid code duplication because the abstracted parts of the system are reused instead of being rewritten in multiple places. This increases reusability because once you define a general behavior or interface, it can be applied across different parts of the system or in other projects, saving time and effort.
 
-#### Minimal Class Example (Pseudo-code)
+### Part 2: Minimal Class Example (Pseudo-code)
 ```cpp
 class BankAccount {
 public:
@@ -49,29 +50,29 @@ public:
     }
 
 ```
-#### Part C: Reflection & Comparison
+### Part C: Reflection & Comparison
 
-**Distilling the Essentials**
+#### Distilling the Essentials
 
 In the `SavingsAccount` class, I would keep things like `encryptData()`, `logTransaction()`, and internal variables such as `accountPin` or `ledgerBalance` private. These aren't meant for the end user and are more about the internal operations of the banking system. The user just needs access to the basic functions like `deposit()`, `withdraw()`, or `getBalance()`. By hiding these implementation details, the class becomes easier to use and less error-prone. This is basically what encapsulation aims to do—protect internal data while exposing a clean interface.
 
-**Contrast with Polymorphism**
+#### Contrast with Polymorphism
 
 When `BankAccount` is abstract and contains virtual methods like `withdraw()` or `deposit()`, and `SavingsAccount` overrides those, we see polymorphism in action. Say you have a pointer of type `BankAccount*` pointing to a `SavingsAccount` object. If you call `withdraw()` on that pointer, the overridden method in `SavingsAccount` runs. This shows runtime polymorphism, where the method call resolves based on the actual object type, not the pointer type. At the same time, abstraction is at play because the user doesn’t need to know what kind of account it is or how the withdrawal is implemented—they just use the interface.
 
-**Real-World Example**
+#### Real-World Example
 
 A good example is in healthcare systems. Doctors interact with interfaces that let them pull patient data or input diagnoses, but they don’t see the backend code that handles encryption, access control, or data storage. Abstraction hides all of that complexity so the user experience stays simple and focused on what matters. This keeps the API design clean and secure while still powerful.
 
 
-#### Additional Exploration:
-**Interfaces vs. Abstract Classes**
+### Additional Exploration:
+#### Interfaces vs. Abstract Classes
 
 An interface defines a contract of methods that a class must implement but doesn’t provide any implementation itself, while an abstract class can provide both abstract methods (without implementation) and concrete methods (with implementation). In short, an interface is for defining "what" a class should do, while an abstract class can define "how" part of it should be done, along with leaving room for further implementation.
 
 An interface would be more suitable than an abstract class when you need to define a common set of behaviors that multiple, unrelated classes must implement. For example, in a system where different types of objects (like a Bird, Car, and Robot) need to implement a Move() function, using an interface ensures that all these objects can be treated similarly while maintaining flexibility in their individual implementations.
 
-**Testing Abstraction** 
+#### Testing Abstraction
 
 To unit test abstract methods or classes, you can create a concrete subclass that provides basic implementations of the abstract methods. This allows you to instantiate the abstract class for testing purposes, making it easier to verify that the abstract methods behave as expected in a controlled, testable way. 
 
