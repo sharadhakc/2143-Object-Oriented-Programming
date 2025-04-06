@@ -10,7 +10,7 @@ To adhere to DRY, you would refactor the code to extract the common logic into a
 
 #### KISS (Keep It Simple, Stupid)
 
-KISS is a reminder to avoid unnecessary complexity in your code. The goal is to keep your logic straightforward and easy to understand so that future changes or debugging can be done quickly and efficiently. For example, if you’re writing a method that checks for user eligibility for a discount, instead of using a complex chain of conditional checks, you could simplify the logic by breaking it down into smaller, clearer pieces.
+KISS is a reminder to avoid unnecessary complexity in your code. The goal is to keep your logic straightforward and easy to understand so that future changes or debugging can be done quickly and efficiently.
 
 However, oversimplifying can sometimes be problematic. For instance, if you strip away too much complexity in an effort to follow KISS, you might end up with code that lacks flexibility or doesn't handle edge cases, making it harder to scale or adapt to new requirements.
 
