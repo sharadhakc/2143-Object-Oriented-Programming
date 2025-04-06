@@ -59,7 +59,37 @@ void printCustomerDetails(Customer cust) {
     printDetails(cust.name, cust.accountType);
 }
 ```
+#### KISS Principle 
 
+**Overly Complex Version (Not KISS)**
 
+```pseudo
+IF item is on clearance AND user is a premium member AND it's not a holiday
+    discount = 25%
+ELSE IF item is on clearance AND it's a holiday
+    discount = 30%
+ELSE IF user is a premium member AND it's a holiday
+    discount = 15%
+ELSE IF item is on clearance OR user is a premium member OR it's a holiday
+    discount = 10%
+ELSE
+    discount = 0%
 
+finalPrice = originalPrice - (originalPrice * discount)
+``` 
+**Simplified Version (KISS)**
+
+```pseudo
+SET discount = 0
+
+IF item is on clearance
+    discount = 30%   // Highest discount for clearance items
+ELSE IF user is a premium member
+    discount = 15%   // Discount for premium members
+ELSE IF it's a holiday
+    discount = 10%   // Holiday discount
+
+finalPrice = originalPrice - (originalPrice * discount)
+```
+The KISS principle works here because the discount logic is straightforward and easy to follow. By prioritizing discounts in a clear order, the code is simpler, reducing complexity and making it easier to maintain or update.
 
