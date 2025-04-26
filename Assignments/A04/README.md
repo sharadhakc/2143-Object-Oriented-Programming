@@ -2,7 +2,7 @@
 |                           Favourite Poster                                 |
 | :------------------------------------------------------------------------: |
 |  <img src="IMG_0953.jpeg" width="600">   |
-| This is an image of my favourite poster presented in the Celebration of Scholarships. |
+| This is an image of my favourite poster presented in the Celebration of Scholarship. |
 
 |                           Picture of Speaker                                |
 | :------------------------------------------------------------------------: |
