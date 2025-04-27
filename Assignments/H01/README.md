@@ -71,8 +71,8 @@ int main() {
 
 - The constructor initializes the creature’s name when an object is created.
 - The `display` method prints the creature’s name.
-- The destructor is called when the object goes out of scope, signaling its removal from memory.
-- When `goblin` is created, the constructor runs automatically. Once `main()` ends, `goblin` is destroyed, and the destructor is triggered.
+- The destructor is called when the objected is destroyed and frees memory.
+- When `goblin` is created, the constructor is called. Once `main()` ends, `goblin` is destroyed, and the destructor is called.
 
 ---
 
