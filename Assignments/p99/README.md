@@ -27,7 +27,3 @@ Users can interact through a menu to:
 - Python 3.7+  
 - Packages: `InquirerPy`, `rich`
 
-Install dependencies:
-
-```bash
-pip install InquirerPy rich
