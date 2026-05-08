@@ -7,7 +7,7 @@
 #### Image:
 
 <a href="https://imgbox.com/quhgmiO9" target="_blank">
-  <img src="https://thumbs2.imgbox.com/0f/87/quhgmiO9_t.png" alt="image host" width="500">
+  <img src="https://thumbs2.imgbox.com/0f/87/quhgmiO9_t.png" alt="image host" width="200">
 </a>
 
 #### Avatar:
