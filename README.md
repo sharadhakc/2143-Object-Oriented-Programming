@@ -6,8 +6,8 @@
 
 #### Image:
 
-<a href="https://imgbox.com/quhgmiO9">
-  <img src="https://thumbs2.imgbox.com/44/94/5Z5TN5be_t.jpeg" width="500">
+<a href="https://imgbox.com/quhgmiO9" target="_blank">
+  <img src="https://thumbs2.imgbox.com/0f/87/quhgmiO9_t.png" alt="image host" width="500">
 </a>
 
 #### Avatar:
